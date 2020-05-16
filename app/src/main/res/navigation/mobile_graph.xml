@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.restaurant.androidnavigationdemo.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createProductFragment"
+            app:destination="@id/createProductFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewProductFragment"
+            app:destination="@id/viewProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProductFragment"
+        android:name="com.restaurant.androidnavigationdemo.CreateProductFragment"
+        android:label="Create Product"
+        tools:layout="@layout/fragment_create_product">
+        <action
+            android:id="@+id/action_createProductFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewProductFragment"
+        android:name="com.restaurant.androidnavigationdemo.ViewProductFragment"
+        android:label="View Products"
+        tools:layout="@layout/fragment_view_product">
+        <action
+            android:id="@+id/action_viewProductFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
